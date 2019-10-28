@@ -1,0 +1,17 @@
+<script type="text/discourse-plugin" version="0.8">
+  api.registerConnectorClass('topic-above-post-stream', 'member-portal', {
+    setupComponent(args, component) {
+      console.log(args)
+      component.set('isMemberPortal', true)
+    }
+  });
+</script>
+
+<script
+  type="text/x-handlebars"
+  data-template-name="/connectors/topic-above-post-stream/member-portal"
+>
+  {{#if isMemberPortal}}
+    <div>CUSTOM</div>
+  {{/if}}
+</script>
