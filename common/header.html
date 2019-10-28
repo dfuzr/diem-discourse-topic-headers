@@ -1,11 +1,5 @@
 <script type="text/discourse-plugin" version="0.8">
-  const categoryMap = {
-    id: {
-      hasNetworkHeader: true
-      title:
-      subtitle:
-    }
-  }
+
   api.registerConnectorClass('topic-above-post-stream', 'post-header', {
     setupComponent(args, component) {
       console.log(args)
@@ -45,6 +39,8 @@
   data-template-name="/connectors/topic-title/post-header"
 >
   {{#if hasNetworkHeader}}
-   <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</h2>
+   <div>
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+   </div>
   {{/if}}
 </script>
