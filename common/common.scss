@@ -30,6 +30,7 @@ div[class^="category-title-header"] {
   }
 }
 
+
 .above-topic-image-wrapper {
   height: 100px;
 
@@ -40,4 +41,10 @@ div[class^="category-title-header"] {
     top: -15px;
     right: 373px;
   }
+}
+
+.post-title-description {
+  margin: 2em 0 4em;
+  font-size: 18px;
+  max-width: 50%;
 }
