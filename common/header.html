@@ -2,7 +2,7 @@
   api.registerConnectorClass('topic-above-post-stream', 'member-portal', {
     setupComponent(args, component) {
       console.log(args)
-      if (args.model.category.id === 2) {
+      if (args.model.category.id === 5) {
         console.log('Adding Event Calendar')
         component.set('hasNetworkHeader', true)
       }
