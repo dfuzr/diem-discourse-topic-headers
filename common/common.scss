@@ -30,7 +30,13 @@ div[class^="category-title-header"] {
   }
 }
 
-.formBgImage {
+.above-topic-image-wrapper {
+  height: 100px;
+  .above-topic-image {
     position: absolute;
     z-index: -1;
+    width: 400px;
+    top: -15px;
+    right: 373px;
+  }
 }
