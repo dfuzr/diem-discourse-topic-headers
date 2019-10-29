@@ -1,12 +1,26 @@
 <script type="text/discourse-plugin" version="0.8">
-
+  const categoryMap = {
+    5: {
+      hasNetworkHeader: true,
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+    },
+    6: {
+      hasNetworkHeader: true,
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+    },
+  };
   api.registerConnectorClass('topic-above-post-stream', 'post-header', {
     setupComponent(args, component) {
       console.log(args)
-      if (args.model.category.id === 5) {
+      const data = categoryMap[args.model.category.id];
+      if (data) {
         console.log('Adding Event Calendar')
-        component.set('hasNetworkHeader', true)
+        component.set('hasNetworkHeader', data.hasNetworkHeader)
       }
+      // if (args.model.category.id === 5) {
+      //   console.log('Adding Event Calendar')
+      //   component.set('hasNetworkHeader', true)
+      // }
 
     }
   });
@@ -14,10 +28,15 @@
   api.registerConnectorClass('topic-title', 'post-header', {
     setupComponent(args, component) {
       console.log(args)
-      if (args.model.category.id === 5) {
+      const data = categoryMap[args.model.category.id];
+      if (data) {
         console.log('Adding Event Calendar')
-        component.set('hasNetworkHeader', true)
+        component.set('headerDescription', data.description)
       }
+      // if (args.model.category.id === 5) {
+      //   console.log('Adding Event Calendar')
+      //   component.set('hasNetworkHeader', true)
+      // }
 
     }
   });
@@ -38,9 +57,9 @@
   type="text/x-handlebars"
   data-template-name="/connectors/topic-title/post-header"
 >
-  {{#if hasNetworkHeader}}
+  {{#if headerDescription}}
    <div class="post-title-description">
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+     {{ headerDescription }}
    </div>
   {{/if}}
 </script>
