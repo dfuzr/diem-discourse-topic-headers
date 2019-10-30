@@ -1,27 +1,7 @@
 div[class^="hero"] {
-  padding-top: 60px;
-  display: flex;
+  padding-top: 100px;
   width: 100%;
-  justify-content: center;
-  .category-title-contents {
-    max-width: 500px;
-    padding: 40px;
-    svg {
-      height: 1.5em;
-      width: 1.1em;
-      margin-right: 0.25em;
-    }
-    h1 {
-      display: inline;
-    }
-  }
-  .category-title-description {
-    a,
-    a:visited {
-      color: inherit;
-      text-decoration: underline;
-    }
-  }
+
   h1 {
     margin: 0 0 4px 0;
     font-size: 3rem;
