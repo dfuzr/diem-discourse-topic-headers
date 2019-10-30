@@ -1,27 +1,23 @@
-<script type="text/discourse-plugin" version="0.8">
+<!-- <script type="text/discourse-plugin" version="0.8"> -->
+<script type="text/javascript" version="0.8">
+  <!--  A mapping of the category ID to the topic metadata -->
   const categoryMap = {
     5: {
       hasNetworkHeader: true,
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+      description: 'Calendar: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
     },
     6: {
       hasNetworkHeader: true,
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+      description: 'Milestones: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
     },
   };
+
   api.registerConnectorClass('topic-above-post-stream', 'post-header', {
     setupComponent(args, component) {
-      console.log(args)
       const data = categoryMap[args.model.category.id];
       if (data) {
-        console.log('Adding Event Calendar')
         component.set('hasNetworkHeader', data.hasNetworkHeader)
       }
-      // if (args.model.category.id === 5) {
-      //   console.log('Adding Event Calendar')
-      //   component.set('hasNetworkHeader', true)
-      // }
-
     }
   });
 
@@ -33,11 +29,6 @@
         console.log('Adding Event Calendar')
         component.set('headerDescription', data.description)
       }
-      // if (args.model.category.id === 5) {
-      //   console.log('Adding Event Calendar')
-      //   component.set('hasNetworkHeader', true)
-      // }
-
     }
   });
 </script>

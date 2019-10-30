@@ -1,8 +1,8 @@
-# discourse-category-banners
+# libra-discourse-topic-headers
 
-A theme component to add category banners to your Discourse community. 
+A theme component to style topics. It will add a hero and a description.
 
-More details here: https://meta.discourse.org/t/discourse-category-banners/86241
+Uses the following outlets:
 
-
-![Category banner](https://discourse-meta.s3-us-west-1.amazonaws.com/original/3X/1/d/1d75ec58312e4a0b4d8b20b3272fca47f2b7247d.png)
+* topic-above-post-stream: Hero image
+* topic-title: Description
