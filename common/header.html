@@ -17,16 +17,6 @@
       hasNetworkHeader: true,
       description: 'Updates: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
     },
-    9: {
-      name: 'Member Resources',
-      hasNetworkHeader: true,
-      description: 'Member resourcing: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
-    },
-    13: {
-      name: 'Member Directory',
-      hasNetworkHeader: true,
-      description: 'Member directory: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
-    },
   };
 
   api.registerConnectorClass('topic-above-post-stream', 'libra-post-header', {
@@ -47,27 +37,6 @@
       }
     }
   });
-
-  api.registerConnectorClass('below-site-header', 'libra-category-header', {
-    setupComponent(args, component) {
-      const container = Discourse.__container__;
-      const path = window.location.pathname;
-      let category;
-      const controller = container.lookup('controller:navigation/category');
-      category = controller.get("category");
-
-      if (!category) {
-        return;
-      }
-      const data = categoryMap[category.id];
-      if (data) {
-        component.set('categoryObj', category);
-        component.set('categoryHeader', data.hasNetworkHeader);
-        component.set('headerDescription', data.description)
-      }
-    }
-  });
-
 </script>
 
 <script
@@ -89,24 +58,5 @@
    <div class="post-title-description">
      {{ headerDescription }}
    </div>
-  {{/if}}
-</script>
-
-<script
-  type="text/x-handlebars"
-  data-template-name="/connectors/below-site-header/libra-category-header"
->
-  {{#if categoryObj}}
-    <div class="wrap">
-      <div class="hero">
-        <div class="above-topic-image-wrapper">
-          <img class="above-topic-image" src="https://libra.org/wp-content/uploads/2019/10/network@2x.png" />
-        </div>
-        <h1>{{ categoryObj.name }}</h1>
-        <div class="post-title-description">
-          {{ headerDescription }}
-        </div>
-      </div>
-    </div>
   {{/if}}
 </script>

@@ -8,6 +8,12 @@ div[class^="hero"] {
     line-height: 1.2;
     overflow: hidden;
   }
+
+  .post-title-description {
+    margin: 2em 0 4em;
+    font-size: 18px;
+    max-width: 50%;
+  }
 }
 
 .hero {
@@ -29,8 +35,3 @@ div[class^="hero"] {
   }
 }
 
-.post-title-description {
-  margin: 2em 0 4em;
-  font-size: 18px;
-  max-width: 50%;
-}
