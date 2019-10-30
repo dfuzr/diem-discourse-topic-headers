@@ -21,7 +21,7 @@
       description: 'Updates: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
     },
     9: {
-      name: 'Member Resourcing',
+      name: 'Member Resources',
       hasNetworkHeader: true,
       description: 'Member resourcing: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
     },
@@ -56,8 +56,12 @@
       category = controller.get("category");
       console.log(category)
       console.log('Yarrrgs', args, component, arguments)
+      if (!category) {
+        return;
+      }
       const data = categoryMap[category.id];
       if (data) {
+        console.log('FOUND', category.name)
         component.set('categoryObj', category);
         component.set('categoryHeader', data.hasNetworkHeader);
         component.set('headerDescription', data.description)
@@ -93,7 +97,7 @@
   type="text/x-handlebars"
   data-template-name="/connectors/below-site-header/libra-category-header"
 >
-  {{#if categoryHeader}}
+  {{#if categoryObj}}
     <div class="wrap">
       <div class="hero">
         <div class="above-topic-image-wrapper">
