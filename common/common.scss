@@ -1,27 +1,8 @@
-div[class^="hero"] {
-  padding-top: 100px;
-  width: 100%;
-
-  h1 {
-    margin: 0 0 4px 0;
-    font-size: 3rem;
-    line-height: 1.2;
-    overflow: hidden;
-  }
-
-  .post-title-description {
-    margin: 2em 0 4em;
-    font-size: 18px;
-    max-width: 50%;
-  }
+.post-title-description {
+  margin: 2em 0 4em;
+  font-size: 18px;
+  max-width: 50%;
 }
-
-.hero {
-  #main-outlet {
-    padding-top: 20px;
-  }
-}
-
 
 .above-topic-image-wrapper {
   height: 25px;
