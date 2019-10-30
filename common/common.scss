@@ -1,4 +1,4 @@
-div[class^="category-title-header"] {
+div[class^="hero"] {
   padding-top: 60px;
   display: flex;
   text-align: center;
@@ -24,7 +24,7 @@ div[class^="category-title-header"] {
     }
   }
 }
-.category-header {
+.hero {
   #main-outlet {
     padding-top: 20px;
   }
