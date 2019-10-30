@@ -1,7 +1,4 @@
 <script type="text/discourse-plugin" version="0.8">
-  const container = Discourse.__container__;
-  const { h } = require('virtual-dom');
-
 
   // A mapping of the category ID to the topic metadata
   const categoryMap = {
@@ -48,20 +45,17 @@
 
   api.registerConnectorClass('below-site-header', 'libra-category-header', {
     setupComponent(args, component) {
+      const container = Discourse.__container__;
       const path = window.location.pathname;
       let category;
-      console.log(path)
       const controller = container.lookup('controller:navigation/category');
-      console.log(controller)
       category = controller.get("category");
-      console.log(category)
-      console.log('Yarrrgs', args, component, arguments)
+
       if (!category) {
         return;
       }
       const data = categoryMap[category.id];
       if (data) {
-        console.log('FOUND', category.name)
         component.set('categoryObj', category);
         component.set('categoryHeader', data.hasNetworkHeader);
         component.set('headerDescription', data.description)
