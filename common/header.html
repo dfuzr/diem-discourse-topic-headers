@@ -1,4 +1,5 @@
-<script type="text/discourse-plugin" version="0.8">
+<!-- <script type="text/discourse-plugin" version="0.8"> -->
+<script type="text/javascript" version="0.8">
   // A mapping of the category ID to the topic metadata
   const categoryMap = {
     5: {
@@ -11,7 +12,7 @@
     },
   };
 
-  api.registerConnectorClass('topic-above-post-stream', 'post-header', {
+  api.registerConnectorClass('topic-above-post-stream', 'libra-post-header', {
     setupComponent(args, component) {
       const data = categoryMap[args.model.category.id];
       if (data) {
@@ -20,7 +21,7 @@
     }
   });
 
-  api.registerConnectorClass('topic-title', 'post-header', {
+  api.registerConnectorClass('topic-title', 'libra-post-topic', {
     setupComponent(args, component) {
       console.log(args)
       const data = categoryMap[args.model.category.id];
@@ -30,11 +31,22 @@
       }
     }
   });
+
+  api.registerConnectorClass('below-site-header', 'libra-category-header', {
+    setupComponent(args, component) {
+      console.log('AERGS', args)
+      const data = categoryMap[args.model.category.id];
+      if (data) {
+        component.set('hasNetworkHeader', data.hasNetworkHeader)
+      }
+    }
+  });
+
 </script>
 
 <script
   type="text/x-handlebars"
-  data-template-name="/connectors/topic-above-post-stream/post-header"
+  data-template-name="/connectors/topic-above-post-stream/libra-post-header"
 >
   {{#if hasNetworkHeader}}
     <div class="above-topic-image-wrapper">
@@ -45,11 +57,22 @@
 
 <script
   type="text/x-handlebars"
-  data-template-name="/connectors/topic-title/post-header"
+  data-template-name="/connectors/topic-title/libra-post-topic"
 >
   {{#if headerDescription}}
    <div class="post-title-description">
      {{ headerDescription }}
    </div>
+  {{/if}}
+</script>
+
+<script
+  type="text/x-handlebars"
+  data-template-name="/connectors/below-site-header/libra-category-header"
+>
+  {{#if categoryHeader}}
+    <div class="above-topic-image-wrapper">
+      <img class="above-topic-image" src="https://libra.org/wp-content/uploads/2019/10/network@2x.png" />
+    </div>
   {{/if}}
 </script>
