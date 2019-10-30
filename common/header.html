@@ -1,5 +1,4 @@
-<!-- <script type="text/discourse-plugin" version="0.8"> -->
-<script type="text/javascript" version="0.8">
+<script type="text/discourse-plugin" version="0.8">
   // A mapping of the category ID to the topic metadata
   const categoryMap = {
     5: {
@@ -23,7 +22,6 @@
 
   api.registerConnectorClass('topic-title', 'libra-post-topic', {
     setupComponent(args, component) {
-      console.log(args)
       const data = categoryMap[args.model.category.id];
       if (data) {
         console.log('Adding Event Calendar')
@@ -34,10 +32,10 @@
 
   api.registerConnectorClass('below-site-header', 'libra-category-header', {
     setupComponent(args, component) {
-      console.log('AERGS', args)
+      console.log('Yarrrgs', args)
       const data = categoryMap[args.model.category.id];
       if (data) {
-        component.set('hasNetworkHeader', data.hasNetworkHeader)
+        component.set('categoryHeader', data.hasNetworkHeader)
       }
     }
   });
