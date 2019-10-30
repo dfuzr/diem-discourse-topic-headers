@@ -44,8 +44,10 @@
   data-template-name="/connectors/topic-above-post-stream/libra-post-header"
 >
   {{#if hasNetworkHeader}}
-    <div class="above-topic-image-wrapper">
-      <img class="above-topic-image" src="https://libra.org/wp-content/uploads/2019/10/network@2x.png" />
+    <div class="topic-header-hero">
+      <div class="above-topic-image-wrapper">
+        <img class="above-topic-image" src="https://libra.org/wp-content/uploads/2019/10/network@2x.png" />
+      </div>
     </div>
   {{/if}}
 </script>
@@ -55,8 +57,10 @@
   data-template-name="/connectors/topic-title/libra-post-topic"
 >
   {{#if headerDescription}}
-    <div class="post-title-description">
-      {{ headerDescription }}
+    <div class="topic-header-hero">
+      <div class="post-title-description">
+        {{ headerDescription }}
+      </div>
     </div>
   {{/if}}
 </script>

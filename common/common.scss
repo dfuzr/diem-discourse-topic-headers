@@ -1,18 +1,19 @@
-.post-title-description {
-  margin: 2em 0 4em;
-  font-size: 18px;
-  max-width: 50%;
-}
+.topic-header-hero {
+  .post-title-description {
+    margin: 2em 0 4em;
+    font-size: 18px;
+    max-width: 50%;
+  }
 
-.above-topic-image-wrapper {
-  height: 10px;
+  .above-topic-image-wrapper {
+    height: 10px;
 
-  .above-topic-image {
-    position: absolute;
-    z-index: -1;
-    width: 400px;
-    top: -15px;
-    left: 60%;
+    .above-topic-image {
+      position: absolute;
+      z-index: -1;
+      width: 400px;
+      top: -15px;
+      left: 60%;
+    }
   }
 }
-
