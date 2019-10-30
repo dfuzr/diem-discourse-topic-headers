@@ -32,7 +32,7 @@
 
   api.registerConnectorClass('below-site-header', 'libra-category-header', {
     setupComponent(args, component) {
-      console.log('Yarrrgs', args)
+      console.log('Yarrrgs', args, component, arguments)
       const data = categoryMap[args.model.category.id];
       if (data) {
         component.set('categoryHeader', data.hasNetworkHeader)
