@@ -21,6 +21,9 @@
 
   api.registerConnectorClass('topic-above-post-stream', 'libra-post-header', {
     setupComponent(args, component) {
+      if (!args.model.category) {
+        return;
+      }
       const data = categoryMap[args.model.category.id];
       if (data) {
         component.set('hasNetworkHeader', data.hasNetworkHeader)
@@ -30,6 +33,9 @@
 
   api.registerConnectorClass('topic-title', 'libra-post-topic', {
     setupComponent(args, component) {
+      if (!args.model.category) {
+        return;
+      }
       const data = categoryMap[args.model.category.id];
       if (data) {
         console.log('Adding Event Calendar')
