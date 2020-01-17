@@ -1,15 +1,17 @@
 <script type="text/discourse-plugin" version="0.8">
 
   function setHeaderVisible() {
-    $.getJSON(window.location.href + '.json', function (jsonData) {
-      const data = categoryMap[jsonData.category_id];
-      if (data) {
-        $('.topic-header-hero').show();
-        $('#libra-post-title-description').html(data.description);
-      } else {
-        $('.topic-header-hero').hide();
-      }
-    });
+    if (window.location.pathname.startsWith('/t/')) {
+      $.getJSON(window.location.href + '.json', function (jsonData) {
+        const data = categoryMap[jsonData.category_id];
+        if (data) {
+          $('.topic-header-hero').show();
+          $('#libra-post-title-description').html(data.description);
+        } else {
+          $('.topic-header-hero').hide();
+        }
+      });
+    }
   }
 
   // A mapping of the category ID to the topic metadata
