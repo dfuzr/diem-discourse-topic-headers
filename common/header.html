@@ -26,6 +26,19 @@
     },
   };
 
+  /*
+  const categoryMap = {
+    15: {
+      name: 'Event Calendar',
+      description: 'SLACK > #libra_events<br/>Please <b><a href="events@libra.org">reach out</a></b> if you\'d like to add an event or if you\'re interested in attending an open event.<br />OPEN EVENT = Libra is not attending these events, but members from the Association are invited to attend.'
+    },
+    16: {
+      name: 'Milestones',
+      description: 'Milestones: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+    },
+  };
+  */
+
   api.registerConnectorClass('topic-above-post-stream', 'libra-post-header', {
     setupComponent(args, component) {
       if (!args.model.category) {
@@ -53,7 +66,6 @@
   api.onPageChange(() => {
     setHeaderVisible();
   });
-
 </script>
 
 <script
@@ -67,10 +79,7 @@
   </div>
 </script>
 
-<script
-  type="text/x-handlebars"
-  data-template-name="/connectors/topic-title/libra-post-topic"
->
+<script type="text/x-handlebars" data-template-name="/connectors/topic-title/libra-post-topic">
   <div class="topic-header-hero">
     <div id="libra-post-title-description"></div>
   </div>
