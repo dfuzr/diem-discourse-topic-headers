@@ -6,7 +6,7 @@
         const data = categoryMap[jsonData.category_id];
         if (data) {
           $('.topic-header-hero').show();
-          $('#libra-post-title-description').html(data.description);
+          $('#diem-post-title-description').html(data.description);
         } else {
           $('.topic-header-hero').hide();
         }
@@ -18,7 +18,7 @@
   const categoryMap = {
     15: {
       name: 'Event Calendar',
-      description: 'SLACK > <a href="https://libra-org.slack.com/app_redirect?channel=libra_events#/">#libra_events</a><br/>Please <b><a href="events@libra.org">reach out</a></b> if you\'d like to add an event or if you\'re interested in attending an open event.<br /><br />OPEN EVENT = Libra is not attending these events, but members from the Association are invited to attend.'
+      description: 'SLACK > <a href="https://libra-org.slack.com/app_redirect?channel=diem_events#/">#diem_events</a><br/>Please <b><a href="events@diem.com">reach out</a></b> if you\'d like to add an event or if you\'re interested in attending an open event.<br /><br />OPEN EVENT = Diem is not attending these events, but members from the Association are invited to attend.'
     },
     16: {
       name: 'Milestones',
@@ -26,7 +26,7 @@
     },
   };
 
-  api.registerConnectorClass('topic-above-post-stream', 'libra-post-header', {
+  api.registerConnectorClass('topic-above-post-stream', 'diem-post-header', {
     setupComponent(args, component) {
       if (!args.model.category) {
         return;
@@ -38,7 +38,7 @@
     }
   });
 
-  api.registerConnectorClass('topic-title', 'libra-post-topic', {
+  api.registerConnectorClass('topic-title', 'diem-post-topic', {
     setupComponent(args, component) {
       if (!args.model.category) {
         return;
@@ -57,7 +57,7 @@
 
 <script
   type="text/x-handlebars"
-  data-template-name="/connectors/topic-above-post-stream/libra-post-header"
+  data-template-name="/connectors/topic-above-post-stream/diem-post-header"
 >
   <div class="topic-header-hero">
     <div class="above-topic-image-wrapper">
@@ -68,9 +68,9 @@
 
 <script
   type="text/x-handlebars"
-  data-template-name="/connectors/topic-title/libra-post-topic"
+  data-template-name="/connectors/topic-title/diem-post-topic"
 >
   <div class="topic-header-hero">
-    <div id="libra-post-title-description"></div>
+    <div id="diem-post-title-description"></div>
   </div>
 </script>
