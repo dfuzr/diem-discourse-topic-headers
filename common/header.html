@@ -1,9 +1,11 @@
 <script type="text/discourse-plugin" version="0.10.2">
 
+  // sets the header visibility (using jquery show/hide methods)
   function setHeaderVisible() {
+    // only request the current page's json data if the current page is a topic
     if (window.location.pathname.startsWith('/t/')) {
       $.getJSON(window.location.href + '.json', function (jsonData) {
-        const data = categoryMap[jsonData.category_id];
+        const data = categoryMap[jsonData.category_id]; // categoryMap is defined below
         if (data) {
           $('.topic-header-hero').show();
           $('#diem-post-title-description').html(data.description);
@@ -15,6 +17,7 @@
   }
 
   // A mapping of the category ID to the topic metadata
+  // these are the IDs on production
   const categoryMap = {
     15: {
       name: 'Event Calendar',
